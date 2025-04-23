@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import HomePage from './pages/HomePage.vue'
 </script>
 
 <template>
   <header></header>
-
-  <main></main>
+  <main>
+    <HomePage />
+  </main>
 </template>
 
 <style scoped></style>

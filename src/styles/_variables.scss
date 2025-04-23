@@ -1,0 +1,35 @@
+@import 'colors.scss';
+:root {
+  // page
+
+  --page-bg-light-gray: #{$color-gray-05};
+  --color-text: #{$color-gray-15};
+  --color-text-secondary: #{$color-gray-13};
+  --divider-normal: #{$color-gray-10};
+
+  // Button
+
+  --button-bg-primary: #{$color-gray-15};
+  --button-bg-secondary: #{$color-gray-01};
+  --button-text-normal: #{$color-gray-01};
+  --button-stroke-secondary: #{$color-gray-12};
+  --button-text-secondary: #{$color-gray-15};
+  --button-icon-primary: #{$color-gray-01};
+  --button-icon-secondary: #{$color-gray-13};
+
+  // Input
+
+  --input-bg-normal: #{$color-gray-01};
+  --input-bg-hover: #{$color-gray-02};
+  --input-bg-disabled: #{$color-gray-05};
+  --input-stroke-normal: #{$color-gray-12};
+  --input-text-placeholder: #{$color-gray-11};
+  --input-icon-normal: #{$color-gray-13};
+
+  // Tab
+
+  // card
+
+  --card-bg-normal: #{$color-gray-01};
+  --card-stroke-normal: #{$color-gray-07};
+}
