@@ -4,16 +4,10 @@
 @tailwind utilities;
 
 body {
-  background: #84b4c2;
-  background: linear-gradient(
-    174deg,
-    rgba(226, 248, 255, 1) 0%,
-    rgba(240, 243, 250, 1) 50%,
-    rgba(250, 244, 244, 1) 100%
-  );
   height: 100%;
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: "Inter", sans-serif;
+  background: var(--Gray---color-gray-05, #F3F3F3);
 }
 i {
   display: inline-flex;
