@@ -23,3 +23,18 @@ gsap.ticker.add((time) => {
 
 // Disable lag smoothing in GSAP to prevent any delay in scroll animations
 gsap.ticker.lagSmoothing(0);
+
+const heroTitleSplit = new SplitType('.heroTitle', {
+  types: 'chars',
+  tagName: 'span',
+})
+
+gsap.fromTo(heroTitleSplit.chars,
+ {
+  y: -100
+},{
+  y:0,
+  duration: 1,
+  stagger: 0.1,
+  ease: 'power2.out',
+})

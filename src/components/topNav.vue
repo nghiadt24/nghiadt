@@ -9,7 +9,7 @@
         <div class="profile col-span-8">
           <img src="https://content.pancake.vn/web-media/dd/df/40/0b/98b2a96a08fdc10784efdcf798d06448b826dcf2b3f25ff91098afd4-w:72-h:72-l:1631-t:image/png.png" alt="" class="profileImg ư" />
           <div class="profileName">
-            <h2 class="name">John Doe</h2>
+            <h2 class="name">Dinh Trong Nghia</h2>
             <h4 class="jobTitle">UI/UX Designer</h4>
           </div>
         </div>

@@ -2,27 +2,225 @@
 import topNav from '@/components/topNav.vue'
 import Button from '@/components/cButton.vue'
 import mainFooter from '@/components/mainFooter.vue'
-
+import { ref,onMounted } from 'vue'
+import SplitType from 'split-type'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 gsap.registerPlugin(ScrollTrigger)
+
+const heroTitle = ref(null)
+
+onMounted(() => {
+  const heroTitleSplit = new SplitType('.heroReveal', {
+  types: 'chars',
+  tagName: 'span',
+  })
+  const openTl = gsap.timeline ({
+     duration: 0.5,
+      ease: "power1.out"
+  })
+
+  openTl.fromTo(heroTitleSplit.chars,
+  {
+    y: -50,
+    opacity:0,
+  },
+  {
+    y:0,
+    opacity:1,
+    stagger: 0.03,
+    delay: 0.4,
+    duration: 0.1,
+  })
+  openTl.fromTo ('.heroDescription',{
+    y:50,
+    opacity:0,
+  },
+{
+    y:0,
+    opacity:1,
+    duration: 0.5,
+    delay: 0.2,
+})
+openTl.fromTo('.heroBtn',{
+    y:50,
+    opacity:0,
+  },{
+    y:0,
+    opacity:1,
+    duration: 0.5,
+    delay: 0.2,
+  })
+  openTl.fromTo('.heroVideoWrapper',{
+    y: 50,
+    opacity:0,
+  },{
+    y:0,
+    opacity:1,
+    duration: 0.5,
+    delay: 0.2,
+  })
+  openTl.fromTo ('.homeNav',{
+    y: -50,
+    opacity:0,
+  },{
+    y:0,
+    opacity:1,
+    duration: 0.5,
+    delay: 0.2,
+  },"<")
+  const videoScroll = gsap.to('.heroVideoWrapper', {
+    scale: 1.1,
+    duration: 0.5
+  })
+  ScrollTrigger.create({
+    trigger: '.heroVideoWrapper',
+    start: '20% 50%',
+    end: 'bottom 30%',
+    animation: videoScroll,
+    toggleActions: 'play reverse play reverse'
+  })
+  gsap.to('.heroTextWrapper',{
+    scrollTrigger: {
+      trigger: '.skillSection',
+      start: 'top center',
+      end: 'top 50%',
+      scrub: 1,
+    },
+    opacity: 0.4,
+    ease: 'power1.out',
+    delay: 0.2,
+  })
+
+  // skillSection
+  const skillCardTl = gsap.timeline({
+    duration: 1,
+  })
+  skillCardTl.fromTo('#s01',{
+    rotate: 0,
+    x: 100,
+    opacity: 0,
+  },
+  {
+    x: -20,
+    rotate: 2,
+    duration: 0.5,
+    delay: 0.2,
+    opacity: 1,
+  })
+  skillCardTl.fromTo('#s02',{
+    rotate: 0,
+    x: 100,
+    opacity: 0,
+  },
+  {
+    x: -10,
+    rotate: 2,
+    duration: 0.5,
+    delay: 0.2,
+    opacity: 1,
+  })
+  skillCardTl.fromTo('#s03',{
+    rotate: 0,
+    x: 100,
+    opacity: 0,
+  },
+  {
+    x: -30,
+    rotate: -1,
+    duration: 0.5,
+    delay: 0.2,
+    opacity: 1,
+  })
+  skillCardTl.fromTo('#s04',{
+    rotate: 0,
+    x: 100,
+    opacity: 0,
+  },
+  {
+    x: -20,
+    rotate: -3,
+    duration: 0.5,
+    delay: 0.2,
+    opacity: 1,
+  })
+  skillCardTl.fromTo('#s05',{
+    rotate: 0,
+    x: -100,
+    opacity: 0,
+  },
+  {
+    x: 20,
+    rotate: -2,
+    duration: 0.5,
+    delay: 0.2,
+    opacity: 1,
+  })
+  skillCardTl.fromTo('#s06',{
+    rotate: 0,
+    x:-100,
+    opacity: 0,
+  },
+  {
+    rotate: -2,
+    x: 20,
+    duration: 0.5,
+    delay: 0.2,
+    opacity: 1,
+  })
+  skillCardTl.fromTo('#s07',{
+    rotate: 0,
+    x:-100,
+    opacity: 0,
+  },
+  {
+    rotate: 2,
+    x: 20,
+    duration: 0.5,
+    delay: 0.2,
+    opacity: 1,
+  })
+  skillCardTl.fromTo('#s08',{
+    rotate: 0,
+    x:-100,
+    opacity: 0,
+  },
+  {
+    x: 20,
+    rotate: 4,
+    duration: 0.5,
+    delay: 0.2,
+    opacity: 1,
+  })
+  ScrollTrigger.create({
+    trigger: '.skillSection',
+    start: '30% center',
+    end: '50% center',
+    animation: skillCardTl,
+    scrub: 1,
+    markers: true,
+  })
+})
+
+
 </script>
 
 <template>
-  <topNav />
+  <topNav class="homeNav" />
   <section class="heroSection container w-full mx-auto">
     <div class="heroGrid">
       <div class="heroTextWrapper">
-        <h1 class="heroTitle">
-          Crafting Intuitive <br />
-          <span class="HeroTitleHighlight" style="color: #8a8a8a"> User Interface </span> Design
+        <h1 class="heroTitle" ref="heroTitle">
+          <span class="heroReveal">Crafting Intuitive</span><br />
+          <span class="HeroTitleHighlight heroReveal" style="color: #8a8a8a"> User Interface </span> <span class="heroReveal">Design</span>
         </h1>
         <p class="heroDescription">
           I design intuitive interfaces that balance aesthetics and usability. Whether it’s for
           startups or established brands, I help build digital products that are engaging,
           accessible, and conversion-friendly.
         </p>
-        <Button text="Get in touch" variant="primary" />
+        <Button class="heroBtn" text="Get in touch" variant="primary" />
       </div>
       <div class="heroVideoWrapper">
         <video class="heroVideo" autoplay loop muted playsinline>
@@ -37,7 +235,7 @@ gsap.registerPlugin(ScrollTrigger)
   <section class="skillSection container w-full mx-auto">
     <div class="grid grid-cols-3 grid-rows-1 gap-4 skillGrid">
       <div class="skillCardWrapper">
-        <div class="cardWrapper" id="a01">
+        <div class="cardWrapper" id="s01">
           <div class="skillCard">
             <div class="skillCardIcon">
               <i class="ph-duotone ph-browser"></i>
@@ -45,7 +243,7 @@ gsap.registerPlugin(ScrollTrigger)
             <h3 class="skillCardTitle">Web & Mobile Interface Design</h3>
           </div>
         </div>
-        <div class="cardWrapper">
+        <div class="cardWrapper" id="s02">
           <div class="skillCard">
             <div class="skillCardIcon">
               <i class="ph-duotone ph-layout"></i>
@@ -53,7 +251,7 @@ gsap.registerPlugin(ScrollTrigger)
             <h3 class="skillCardTitle">User Research & Wireframing</h3>
           </div>
         </div>
-        <div class="cardWrapper">
+        <div class="cardWrapper" id="s03">
           <div class="skillCard">
             <div class="skillCardIcon">
               <i class="ph-duotone ph-tree-view"></i>
@@ -61,7 +259,7 @@ gsap.registerPlugin(ScrollTrigger)
             <h3 class="skillCardTitle">Design Systems & Prototyping</h3>
           </div>
         </div>
-        <div class="cardWrapper">
+        <div class="cardWrapper" id="s04">
           <div class="skillCard">
             <div class="skillCardIcon">
               <i class="ph-duotone ph-hand-pointing"></i>
@@ -80,7 +278,7 @@ gsap.registerPlugin(ScrollTrigger)
         </p>
       </div>
       <div class="skillCardWrapper">
-        <div class="cardWrapper">
+        <div class="cardWrapper" id="s05">
           <div class="skillCard">
             <div class="skillCardIcon">
               <i class="ph-duotone ph-code"></i>
@@ -88,7 +286,7 @@ gsap.registerPlugin(ScrollTrigger)
             <h3 class="skillCardTitle">HTML5, CSS3, SCSS</h3>
           </div>
         </div>
-        <div class="cardWrapper">
+        <div class="cardWrapper" id="s06">
           <div class="skillCard">
             <div class="skillCardIcon">
               <i class="ph-duotone ph-devices"></i>
@@ -96,7 +294,7 @@ gsap.registerPlugin(ScrollTrigger)
             <h3 class="skillCardTitle">Responsive Web Development</h3>
           </div>
         </div>
-        <div class="cardWrapper">
+        <div class="cardWrapper" id="s07">
           <div class="skillCard">
             <div class="skillCardIcon">
               <i class="ph-duotone ph-file-js"></i>
@@ -104,7 +302,7 @@ gsap.registerPlugin(ScrollTrigger)
             <h3 class="skillCardTitle">Basic JavaScript & React Components</h3>
           </div>
         </div>
-        <div class="cardWrapper">
+        <div class="cardWrapper" id="s08">
           <div class="skillCard">
             <div class="skillCardIcon">
               <i class="ph-duotone ph-handshake"></i>
@@ -347,6 +545,7 @@ gsap.registerPlugin(ScrollTrigger)
 </template>
 
 <style scoped lang="scss">
+
 .eduCardWrapper {
   display: flex;
   flex-direction: row;
@@ -607,6 +806,7 @@ gsap.registerPlugin(ScrollTrigger)
     border: 0.8px solid var(--Button-button-stroke-secondary, #8a8a8a);
     box-shadow: 0px 2px 6.8px 0px rgba(0, 0, 0, 0.13);
   }
+  transform-origin: center center;
 }
 .skillSection {
   height: 100vh;
@@ -751,6 +951,9 @@ gsap.registerPlugin(ScrollTrigger)
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+.heroReveal {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .heroTitleHighlight {
   color: var(--Gray---color-gray-12, #8a8a8a) !important;
