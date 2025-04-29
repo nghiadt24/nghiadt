@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import topNav from '@/components/topNav.vue'
 import Button from '@/components/cButton.vue'
+import mainFooter from '@/components/mainFooter.vue'
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -160,9 +161,372 @@ gsap.registerPlugin(ScrollTrigger)
       </div>
     </div>
   </section>
+  <section class="aboutSection container w-full mx-auto">
+    <div class="aboutGrid grid grid-cols-12">
+      <div class="aboutTitleWrapper col-span-8">
+        <h2 class="aboutTitle">About Me</h2>
+        <p class="aboutDescription">
+          Hello, I’m Dinh Trong Nghia — a UI/UX Designer with nearly 5 years of experience crafting
+          digital interfaces and user experiences for websites, mobile applications, and digital
+          platforms. I believe that great design is not just about aesthetics, but about solving
+          real problems and enhancing user journeys. With a strong foundation in design systems,
+          user-centered thinking, and market insights, I have helped businesses transform ideas into
+          functional, beautiful, and effective digital products. In every project, I prioritize
+          listening, understanding client needs, and keeping users at the core of every design
+          decision.
+        </p>
+        <h2 class="aboutTitle">What can I do</h2>
+        <div class="skillTagWrapper grid grid-cols-4 gap-2 w-full">
+          <div class="skillTag">
+            <div class="skillTagIcon">
+              <i class="ph-duotone ph-layout"></i>
+            </div>
+            <p class="tagText">User Research</p>
+          </div>
+          <div class="skillTag">
+            <div class="skillTagIcon">
+              <i class="ph-duotone ph-magic-wand"></i>
+            </div>
+            <p class="tagText">Visual Design</p>
+          </div>
+          <div class="skillTag">
+            <div class="skillTagIcon">
+              <i class="ph-duotone ph-cursor-click"></i>
+            </div>
+            <p class="tagText">Interaction Design</p>
+          </div>
+          <div class="skillTag">
+            <div class="skillTagIcon">
+              <i class="ph-duotone ph-selection-background"></i>
+            </div>
+            <p class="tagText">Design Systems</p>
+          </div>
+          <div class="skillTag">
+            <div class="skillTagIcon">
+              <i class="ph-duotone ph-test-tube"></i>
+            </div>
+            <p class="tagText">Usability Testing</p>
+          </div>
+          <div class="skillTag">
+            <div class="skillTagIcon">
+              <i class="ph-duotone ph-devices"></i>
+            </div>
+            <p class="tagText">Responsive Layout</p>
+          </div>
+          <div class="skillTag">
+            <div class="skillTagIcon">
+              <i class="ph-duotone ph-code"></i>
+            </div>
+            <p class="tagText">Front-end Development</p>
+          </div>
+          <div class="skillTag">
+            <div class="skillTagIcon">
+              <i class="ph-duotone ph-handshake"></i>
+            </div>
+            <p class="tagText">Team Collaboration</p>
+          </div>
+        </div>
+      </div>
+      <div class="aboutImgWrapper col-span-4">
+        <img
+          class="aboutImg"
+          src="https://content.pancake.vn/web-media/80/99/71/1f/d24fb234a595327ebcb0254edc880e59baf8e093aa5532033f36a948-w:536-h:628-l:324179-t:image/png.png"
+          alt=""
+        />
+      </div>
+    </div>
+  </section>
+  <section class="expSection container w-full mx-auto">
+    <div class="expGrid grid grid-cols-12">
+      <h2 class="expTitle w-full">Experiences</h2>
+      <div class="expCardWrapper col-span-full">
+        <div class="expCard">
+          <div class="expCardTitleWrapper">
+            <img
+              src="https://content.pancake.vn/web-media/db/84/68/fa/e24d30ad0ecfb2a7dfab9cd4d2dff3fc234805537cee67e961a99cc0-w:64-h:64-l:5254-t:image/png.png"
+              alt=""
+            />
+            <h3 class="expCardTitle">Solar Inc</h3>
+          </div>
+          <div class="expCardDetailWrapper">
+            <h3 class="expCardPosition">Internship UI/UX Designer</h3>
+            <p class="expCardDate">Jul 2019 - Oct 2019</p>
+          </div>
+        </div>
+        <div class="expCard">
+          <div class="expCardTitleWrapper">
+            <img
+              src="https://content.pancake.vn/web-media/1b/62/ce/b2/367a49581808d256d9cabd40f8a93354e3b822aba0d0d3847fe01e96-w:64-h:64-l:2477-t:image/png.png"
+              alt=""
+            />
+            <h3 class="expCardTitle">Amela Technology</h3>
+          </div>
+          <div class="expCardDetailWrapper">
+            <h3 class="expCardPosition">UI Designer</h3>
+            <p class="expCardDate">Sep 2020 - May 2021</p>
+          </div>
+        </div>
+        <div class="expCard">
+          <div class="expCardTitleWrapper">
+            <img
+              src="https://content.pancake.vn/web-media/43/6d/68/e9/4ed33d9e8ff260a3356ed46618166efcc1019678c6d8349eeb6a6866-w:64-h:64-l:2649-t:image/png.png"
+              alt=""
+            />
+            <h3 class="expCardTitle">Tripath Vietnam</h3>
+          </div>
+          <div class="expCardDetailWrapper">
+            <h3 class="expCardPosition">Product Designer</h3>
+            <p class="expCardDate">May 2021 - Nov 2021</p>
+          </div>
+        </div>
+        <div class="expCard">
+          <div class="expCardTitleWrapper">
+            <img
+              src="https://content.pancake.vn/web-media/be/19/f2/d7/917e0a6d9a58f8d3bb9139047f18ec4721d9d7ff7fbfe42a4e6b9f44-w:64-h:64-l:2175-t:image/png.png"
+              alt=""
+            />
+            <h3 class="expCardTitle">Techlab</h3>
+          </div>
+          <div class="expCardDetailWrapper">
+            <h3 class="expCardPosition">Product Designer</h3>
+            <p class="expCardDate">Nov 2021 - Mar 2023</p>
+          </div>
+        </div>
+        <div class="expCard">
+          <div class="expCardTitleWrapper">
+            <img
+              src="https://content.pancake.vn/web-media/6a/79/a8/5d/28f068c00d4e78640bf252e0f6eef0500c416e35c625998a6baca7e4-w:64-h:64-l:5209-t:image/png.png"
+              alt=""
+            />
+            <h3 class="expCardTitle">Pancake</h3>
+          </div>
+          <div class="expCardDetailWrapper">
+            <h3 class="expCardPosition">Product Designer</h3>
+            <p class="expCardDate">Mar 2023 - Now</p>
+          </div>
+        </div>
+      </div>
+      <div class="eduWrapper col-span-full">
+        <h2 class="expTitle w-full">Education</h2>
+      </div>
+      <div class="eduCardWrapper">
+        <div class="eduCard">
+          <div class="eduCardTitleWrapper">
+            <img
+              src="https://content.pancake.vn/web-media/58/c7/50/a9/85c73a1c9199fb417e1979b7e1e9382f38d820353ca5b7aa12013df5-w:64-h:64-l:3293-t:image/png.png"
+              alt=""
+            />
+            <div class="eduCardDetail">
+              <h3 class="expCardTitle">FPT Arena Media</h3>
+              <p class="expCardDate">2018-2020</p>
+            </div>
+          </div>
+          <div class="eduCardIcon">
+            <i class="ph ph-arrow-right"></i>
+          </div>
+        </div>
+        <div class="eduCard">
+          <div class="eduCardTitleWrapper">
+            <img
+              src="https://content.pancake.vn/web-media/3b/52/1b/6f/e3beba150787c8f7d9814a4a777d2b8a4fe6333cdc8249647baf8d33-w:64-h:64-l:2266-t:image/png.png"
+              alt=""
+            />
+            <div class="eduCardDetail">
+              <h3 class="expCardTitle">Google UX Design</h3>
+              <p class="expCardDate">2023</p>
+            </div>
+          </div>
+          <div class="eduCardIcon">
+            <i class="ph ph-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <mainFooter />
 </template>
 
 <style scoped lang="scss">
+.eduCardWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+.eduCardIcon {
+  color: #616161;
+  font-size: 24px;
+}
+.eduCardDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 4px;
+}
+.eduCardTitleWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+.eduCard {
+  width: 100%;
+  display: flex;
+  padding: 16px 24px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+  border: 1px dashed var(--Input-input-stroke-normal, #8a8a8a);
+  background: var(--Gray---color-gray-07, #ebebeb);
+}
+.expSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  height: 100vh;
+}
+.expCardDate {
+  color: var(--Page-color-text-secondary, #616161);
+  text-align: right;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 166.667% */
+  text-transform: capitalize;
+}
+.expCardPosition {
+  color: var(--Page-color-text, #303030);
+  text-align: right;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 166.667% */
+  text-transform: capitalize;
+}
+.expCardDetailWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+.expCardTitle {
+  color: var(--Page-color-text-secondary, #616161);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 166.667% */
+  text-transform: capitalize;
+}
+.expCardTitleWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+.expCard {
+  display: flex;
+  padding: 16px 24px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+  background: var(--Gray---color-gray-07, #ebebeb);
+}
+.expTitle {
+  color: var(--Gray---color-gray-15, #303030);
+  text-align: start;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 50px;
+  text-transform: capitalize;
+}
+.expGrid {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 24px;
+  width: 100%;
+}
+.expCardWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+}
+.aboutImg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+}
+.aboutImgWrapper {
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+}
+.aboutSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  height: 100vh;
+}
+.aboutGrid {
+  column-gap: 24px;
+}
+.aboutTitleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.skillTagIcon {
+  font-size: 32px;
+  color: #616161;
+}
+.tagText {
+  color: var(--Page-color-text-secondary, #616161);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 133.333% */
+  text-transform: capitalize;
+}
+.skillTag {
+  display: flex;
+  padding: 8px 8px;
+  align-items: center;
+  justify-content: start;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px dashed var(--Input-input-stroke-normal, #8a8a8a);
+  background: var(--Page-page-bg-light-gray, #f3f3f3);
+}
+.aboutDescription {
+  color: var(--Page-color-text-secondary, #616161);
+  text-align: start;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+}
+.aboutTitle {
+  color: var(--Gray---color-gray-15, #303030);
+  text-align: start;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 50px;
+  text-transform: capitalize;
+}
 .projectSection {
   display: flex;
   flex-direction: column;
@@ -220,7 +584,7 @@ gsap.registerPlugin(ScrollTrigger)
   color: var(--Gray---color-gray-15, #303030);
   text-align: center;
   text-align: center;
-  font-size: 32px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 600;
   line-height: 50px;
@@ -322,7 +686,7 @@ gsap.registerPlugin(ScrollTrigger)
   color: var(--Gray---color-gray-15, #303030);
   text-align: center;
   text-align: center;
-  font-size: 32px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 600;
   line-height: 50px;
