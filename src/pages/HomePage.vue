@@ -199,11 +199,143 @@ openTl.fromTo('.heroBtn',{
     end: '50% center',
     animation: skillCardTl,
     scrub: 1,
+  })
+
+  // skillTitle
+  const skillTitleText = new SplitType('.skillTitle', {
+    types: 'chars',
+  })
+  const skillTitleAnimate = gsap.fromTo(skillTitleText.chars, {
+    y: 50,
+    opacity: 0,
+  },
+  {
+    y: 0,
+    opacity: 1,
+    stagger: 0.03,
+    duration: 0.5,
+    delay: 0.2,
+  })
+  ScrollTrigger.create({
+    trigger: '.skillSection',
+    start: '60% center',
+    end: '50% center',
+    animation: skillTitleAnimate,
+    scrub: 1.5,
+  })
+  // skillDescription
+  const skillDescriptionText = new SplitType('.skillDescription', {
+    types: 'words',
+  })
+  const skillDescriptionAnimate = gsap.fromTo(skillDescriptionText.words, {
+    y: 50,
+    opacity: 0,
+  },
+  {
+    y: 0,
+    opacity: 1,
+    stagger: 0.03,
+    duration: 0.5,
+    delay: 0.2,
+  })
+  ScrollTrigger.create({
+    trigger: '.skillSection',
+    start: '60% center',
+    end: '50% center',
+    animation: skillDescriptionAnimate,
+    scrub: 2,
+  })
+  // ProjectSection
+  const projectTitleAnimate = gsap.fromTo('.projectTitle', {
+    x: 100,
+    opacity: 0,
+  },
+  {
+    x: 0,
+    opacity: 1,
+    duration: 0.5,
+    delay: 0.2,
+  })
+
+  ScrollTrigger.create({
+    trigger: '.projectSection',
+    start: 'top center',
+    end: '50% 50%',
+    animation: projectTitleAnimate,
+    scrub: 1,
+  })
+  const projectButtonAnimate = gsap.fromTo('.projectBtn', {
+    x: -100,
+    opacity: 0,
+  },
+  {
+    x: 0,
+    opacity: 1,
+    duration: 0.5,
+    delay: 0.2,
+  })
+  ScrollTrigger.create({
+    trigger: '.projectSection',
+    start: 'top center',
+    end: '50% 50%',
+    animation: projectButtonAnimate,
+    scrub: 1,
+  })
+  // projectCard
+  const projectCardTl = gsap.timeline({
+    duration: 2,
+    delay: 2,
+    stagger: 1,
+    ease: "power2.out"
+  })
+  projectCardTl.fromTo('#Prj02', {
+    y: 100,
+    opacity: 0,
+  },
+  {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+  })
+  projectCardTl.fromTo('#Prj01', {
+    x: 100,
+    opacity: 0,
+  },
+  {
+    x: 0,
+    opacity: 1,
+    duration: 2,
+  })
+  projectCardTl.fromTo('#Prj03', {
+    x: -100,
+    opacity: 0,
+  },
+  {
+    x: 0,
+    opacity: 1,
+    duration: 2,
+  },"<")
+
+  projectCardTl.fromTo('.projectCardTitleWrapper',{
+    y: 100,
+    opacity: 0,
+    duration: 2,
+  },
+  {
+    y: 0,
+    delay: 1,
+    opacity: 1,
+  },"<")
+
+  ScrollTrigger.create({
+    trigger: '.projectSection',
+    start: '30% center',
+    end: '50% 100%',
+    animation: projectCardTl,
+    scrub: 2,
     markers: true,
   })
 })
-
-
 </script>
 
 <template>
@@ -269,7 +401,7 @@ openTl.fromTo('.heroBtn',{
         </div>
       </div>
       <div class="skillTitleWrapper">
-        <h2 class="skillTitle">My Skills</h2>
+        <h2 class="skillTitle">Crafting Meaningful Experiences</h2>
         <p class="skillDescription">
           I believe that great design is not just about aesthetics, but about solving real problems
           and enhancing user journeys. With a strong foundation in design systems, user-centered
@@ -317,10 +449,10 @@ openTl.fromTo('.heroBtn',{
     <div class="projectGrid">
       <div class="projectTitleRow">
         <h2 class="projectTitle">My Projects</h2>
-        <Button text="Find all" variant="primary" />
+        <Button text="Find all" class="projectBtn" variant="primary" />
       </div>
       <div class="projectCardRow grid grid-col-12 gap-4">
-        <div class="projectCard">
+        <div class="projectCard" id="Prj01">
           <div class="projectCardImg">
             <img
               src="https://content.pancake.vn/web-media/3d/e3/17/a6/2697dc6be85cf23ee9ad92dea102aa4e73f4eb29a7ad0c4990421f5e-w:512-h:620-l:122431-t:image/png.png"
@@ -332,7 +464,7 @@ openTl.fromTo('.heroBtn',{
             <p class="projectCardDescription">This is a description of the project.</p>
           </div>
         </div>
-        <div class="projectCard">
+        <div class="projectCard" id="Prj02">
           <div class="projectCardImg">
             <img
               src="https://content.pancake.vn/web-media/cd/51/31/2f/cd1ab2c4f7319e1c52d9ca781d0504176b501af9fc6b804006534968-w:512-h:620-l:227572-t:image/png.png"
@@ -344,7 +476,7 @@ openTl.fromTo('.heroBtn',{
             <p class="projectCardDescription">This is a description of the project.</p>
           </div>
         </div>
-        <div class="projectCard">
+        <div class="projectCard" id="Prj03">
           <div class="projectCardImg">
             <img
               src="https://content.pancake.vn/web-media/d2/89/b5/4e/29d5ab1e39621664e2755d3b4738d5acf5d19707632d4f744429fc22-w:512-h:620-l:117764-t:image/png.png"
@@ -883,12 +1015,13 @@ openTl.fromTo('.heroBtn',{
   text-align: center;
 }
 .skillTitle {
-  color: var(--Gray---color-gray-15, #303030);
+  color: var(--Gray---color-gray-12, #8A8A8A);
+  font-family: 'Raleway', sans-serif;
   text-align: center;
   text-align: center;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 600;
+  font-size: 38px;
+  font-style: italic;
+  font-weight: 500;
   line-height: 50px;
   text-transform: capitalize;
 }
