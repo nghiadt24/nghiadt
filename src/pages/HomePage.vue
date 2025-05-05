@@ -218,7 +218,7 @@ openTl.fromTo('.heroBtn',{
   })
   ScrollTrigger.create({
     trigger: '.skillSection',
-    start: '60% center',
+    start: '50% center',
     end: '50% center',
     animation: skillTitleAnimate,
     scrub: 1.5,
@@ -240,7 +240,7 @@ openTl.fromTo('.heroBtn',{
   })
   ScrollTrigger.create({
     trigger: '.skillSection',
-    start: '60% center',
+    start: '50% center',
     end: '50% center',
     animation: skillDescriptionAnimate,
     scrub: 2,
@@ -333,14 +333,216 @@ openTl.fromTo('.heroBtn',{
     end: '50% 100%',
     animation: projectCardTl,
     scrub: 2,
+  })
+
+  // AboutSection
+  const projectDescriptionColor = gsap.to('.projectCardDescription',{
+    color: '#B5B5B5',
+    duration: 1,
+    ease: 'power1.out',
+  })
+  const projectTitleColor = gsap.to ('.projectCardTitle',{
+    color: '#fff',
+    duration: 1,
+    ease: 'power1.out',
+  })
+  const projectCardImgColor = gsap.to ('.projectCardImg',{
+    backgroundColor: '#4A4A4A',
+    duration: 1,
+    ease: 'power1.out',
+  })
+  const sectionBackground = gsap.to ('.homePage',{
+    backgroundColor: '#303030',
+    duration: 1,
+    ease: 'power1.out',
+  })
+  const aboutTitleColor = gsap.to('.aboutTitle',{
+    color: '#fff',
+    duration: 1,
+    ease: 'power1.out',
+  })
+  const aboutDescriptionColor = gsap.to('.aboutDescription',{
+    color: '#B5B5B5',
+    duration: 1,
+    ease: 'power1.out',
+  })
+  const skillTagColor = gsap.to('.skillTag',{
+    backgroundColor: '#4A4A4A',
+    borderColor: '#616161',
+    duration: 1,
+    ease: 'power1.out',
+  })
+  const skillTagTextColor = gsap.to('.tagText',{
+    color: '#fff',
+    duration: 1,
+    ease: 'power1.out',
+  })
+  const skillTagIconColor = gsap.to('.skillTagIcon',{
+    color: '#fff',
+    duration: 1,
+    ease: 'power1.out',
+  })
+  const aboutImageColor = gsap.to('.aboutImgWrapper',{
+    backgroundColor: '#4A4A4A',
+    duration: 1,
+    ease: 'power1.out',
+  })
+  ScrollTrigger.create({
+    trigger: '.aboutSection',
+    start: '30% center',
+    end: '50% 50%',
+    animation: projectCardImgColor,
+    scrub: 1,
+  })
+  ScrollTrigger.create ({
+    trigger: '.aboutSection',
+    start: '30% center',
+    end: '50% 50%',
+    animation: projectDescriptionColor,
+    scrub: 1,
+  })
+  ScrollTrigger.create({
+    trigger: '.aboutSection',
+    start: '30% center',
+    end: '50% 50%',
+    animation: projectTitleColor,
+    scrub: 1,
+  })
+  ScrollTrigger.create({
+    trigger: '.aboutSection',
+    start: '30% center',
+    end: '50% 50%',
+    animation: sectionBackground,
+    scrub: 1,
+  })
+  ScrollTrigger.create({
+    trigger: '.aboutSection',
+    start: '40% center',
+    end: '50% 50%',
+    animation: aboutTitleColor,
+    scrub: 1,
+  })
+  ScrollTrigger.create({
+    trigger: '.aboutSection',
+    start: '40% center',
+    end: '50% 50%',
+    animation: aboutDescriptionColor,
+    scrub: 1,
+  })
+  ScrollTrigger.create({
+    trigger: '.aboutSection',
+    start: '40% center',
+    end: '50% 50%',
+    animation: skillTagColor,
+    scrub: 1,
+  })
+  ScrollTrigger.create({
+    trigger: '.aboutSection',
+    start: '40% center',
+    end: '50% 50%',
+    animation: skillTagTextColor,
+    scrub: 1,
+  })
+  ScrollTrigger.create({
+    trigger: '.aboutSection',
+    start: '40% center',
+    end: '50% 50%',
+    animation: skillTagIconColor,
+    scrub: 1,
+  })
+  ScrollTrigger.create({
+    trigger: '.aboutSection',
+    start: '40% center',
+    end: '50% 50%',
+    animation: aboutImageColor,
+    scrub: 1,
+  })
+  const aboutDescriptionTextSplit = new SplitType('.aboutDescription',{
+    types: 'lines',
+  })
+  const aboutDescriptionTextAnimate = gsap.fromTo (aboutDescriptionTextSplit.lines,{
+    y: 50,
+    opacity: 0,
+  },{
+    y: 0,
+    opacity: 1,
+    duration: 0.5,
+    stagger: 0.1,
+    delay: 0.5,
+  })
+
+  const aboutSectionTl = gsap.timeline ({
+    duration: 1,
+  })
+
+  aboutSectionTl.fromTo ('.aboutTitle',{
+    y: 50,
+    opacity: 0,
+  },
+  {
+    y:0,
+    opacity: 1,
+    delay: 0.2,
+  })
+  ScrollTrigger.create({
+    animation: aboutSectionTl,
+    scrub:1,
+    trigger: '.aboutSection',
+    start: 'top center',
+    end: 'center center',
     markers: true,
+  })
+  ScrollTrigger.create ({
+    animation: aboutDescriptionTextAnimate,
+    toggleActions: 'play complete restart reverse',
+    trigger: '.aboutSection',
+    start: 'top center',
+    end: 'center center',
+  })
+  // ExpSection
+  const expSectionBackground = gsap.to ('.homePage',{
+    backgroundColor: '#F3F3F3',
+    duration: 1,
+    ease: 'power1.out',
+  })
+  const expCardColor = gsap.to('.expCard',{
+    backgroundColor: '#EBEBEB',
+    duration: 1,
+    ease: 'power1.out',
+  })
+  const expTitleColor = gsap.to('.expTitle',{
+    color: '#303030',
+    duration: 1,
+    ease: 'power1.out',
+  })
+  ScrollTrigger.create({
+    trigger: '.expSection',
+    start: '20% center',
+    end: '40% 50%',
+    animation: expSectionBackground,
+    scrub: 1,
+  })
+  ScrollTrigger.create({
+    trigger: '.expSection',
+    start: '20% center',
+    end: '40% 50%',
+    animation: expCardColor,
+    scrub: 1,
+  })
+  ScrollTrigger.create({
+    trigger: '.expSection',
+    start: '20% center',
+    end: '40% 50%',
+    animation: expTitleColor,
+    scrub: 1,
   })
 })
 </script>
 
 <template>
   <topNav class="homeNav" />
-  <section class="heroSection container w-full mx-auto">
+  <div class="homePage">
+    <section class="heroSection container w-full mx-auto">
     <div class="heroGrid">
       <div class="heroTextWrapper">
         <h1 class="heroTitle" ref="heroTitle">
@@ -673,6 +875,7 @@ openTl.fromTo('.heroBtn',{
       </div>
     </div>
   </section>
+  </div>
   <mainFooter />
 </template>
 
@@ -768,10 +971,10 @@ openTl.fromTo('.heroBtn',{
   justify-content: space-between;
   align-items: center;
   border-radius: 16px;
-  background: var(--Gray---color-gray-07, #ebebeb);
+  background: #4A4A4A;
 }
 .expTitle {
-  color: var(--Gray---color-gray-15, #303030);
+  color: #fff;
   text-align: start;
   font-size: 28px;
   font-style: normal;
@@ -848,6 +1051,7 @@ openTl.fromTo('.heroBtn',{
   font-style: normal;
   font-weight: 400;
   line-height: 32px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .aboutTitle {
   color: var(--Gray---color-gray-15, #303030);
